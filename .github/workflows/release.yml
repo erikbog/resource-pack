@@ -1,0 +1,33 @@
+name: Package and release resource pack
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create resource pack archive
+        env:
+          ZIP_NAME: resource-pack-${{ github.sha }}.zip
+        run: zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: resource-pack-${{ github.run_number }}
+          ZIP_NAME: resource-pack-${{ github.sha }}.zip
+        run: |
+          gh release create "$TAG_NAME" "$ZIP_NAME" \
+            --target "$GITHUB_SHA" \
+            --title "Resource pack build $GITHUB_RUN_NUMBER" \
+            --notes "Automated resource pack release for commit $GITHUB_SHA."
