@@ -1,0 +1,26 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "dyeable": {
+          "color_when_undyed": -1
+        },
+        "texture": "erikdlc:straw_pants"
+      },
+      {
+        "texture": "erikdlc:straw_pants_overlay"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "dyeable": {
+          "color_when_undyed": -1
+        },
+        "texture": "erikdlc:straw_pants"
+      },
+      {
+        "texture": "erikdlc:straw_pants_overlay"
+      }
+    ]
+  }
+}

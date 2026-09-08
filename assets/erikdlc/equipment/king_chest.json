@@ -1,0 +1,26 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "dyeable": {
+          "color_when_undyed": -1
+        },
+        "texture": "erikdlc:king_chest"
+      },
+      {
+        "texture": "erikdlc:king_chest_overlay"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "dyeable": {
+          "color_when_undyed": -1
+        },
+        "texture": "erikdlc:king_chest"
+      },
+      {
+        "texture": "erikdlc:king_chest_overlay"
+      }
+    ]
+  }
+}
