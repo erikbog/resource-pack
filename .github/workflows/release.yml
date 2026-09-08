@@ -18,14 +18,14 @@ jobs:
 
       - name: Create resource pack archive
         env:
-          ZIP_NAME: resource-pack-${{ github.sha }}.zip
+          ZIP_NAME: resource-pack.zip
         run: zip -r "$ZIP_NAME" assets pack.mcmeta pack.png
 
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG_NAME: resource-pack-${{ github.run_number }}
-          ZIP_NAME: resource-pack-${{ github.sha }}.zip
+          ZIP_NAME: resource-pack.zip
         run: |
           gh release create "$TAG_NAME" "$ZIP_NAME" \
             --target "$GITHUB_SHA" \
